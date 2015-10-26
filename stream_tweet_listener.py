@@ -40,8 +40,7 @@ class StreamTweetListener(StreamListener):
                 parsed_tweet["retweet_count"] = json_tweet['retweet_count']
                 parsed_tweet["favorite_count"] = json_tweet['favorite_count']
                 parsed_tweet["coordinate"] = json_tweet['coordinates']
-                parsed_tweet["possibly_sensitive"] = json_tweet['possibly_sensitive']
-
+                
                 dump_tweet = json.dumps(parsed_tweet)
                 loaded_tweet = json.loads(dump_tweet)
                 self.tweets.insert_one(loaded_tweet)
